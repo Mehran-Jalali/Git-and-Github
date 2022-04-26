@@ -1,1 +1,7 @@
-our first sighn in
+our first sighn in 
+برای شاخه جدید زدن به جای 
+(1) => git branch "name"   and   (2) => git checkout name
+میتوان با کد زیر هم branch جدید درست کرد هم واردش شد
+=> git checkout -b name
+یا
+=> git switch -c name
