@@ -5,3 +5,5 @@ our first sighn in
 => git checkout -b name
 یا
 => git switch -c name
+برای حذف کردن branch یا چند تا از branchکافیست 
+=> git branch -D name name2
