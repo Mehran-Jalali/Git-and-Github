@@ -7,3 +7,23 @@ our first sighn in
 => git switch -c name
 برای حذف کردن branch یا چند تا از branchکافیست 
 => git branch -D name name2
+
+
+                    ==> Git Stash <== Stash uses when ((UnStaged-changes)) happend
+git stash => برگشت به حالت پیش از کامیت(commit)
+git stash apply => برگشت به حالتی که بعد از کامیت(commit) تغیرات روی فایل کرده ایم
+                 ‍/با این کد به تنهایی به اخرین تغییر دست خواهیم یافت
+git stash list => لیست تغیراتی که ما تنها روی working directory   داده ایم یعنی بدون stage کردن  
+        ||         در این لیست 0 اخرین تغیر است
+        ||              
+        ↓↓
+git stash apply number         number which's  in the list 
+git stash clear                deletes all the stashes
+
+    More Details :
+1)git stash push -m "some text"                        This code can stash chenges with a message that you can
+                                                         ,see in (git stash list)
+2)git stash pop number (number which's  in the list)   This code can do a same thing like (git stash apply number)
+                                                         ,but it will remove the stash number from stash list
+3)git stash drop number                                This code will only remove the stash number from stash list  
+ 
