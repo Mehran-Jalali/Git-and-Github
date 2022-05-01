@@ -61,3 +61,11 @@ git cherry-pick commit's number          commit's number which we see in git log
                                          df128562a749af0920b8cba83fdbd9576f0bcb67 ; It leads to create a new
                                          commit's number that is exactly have the same order in privious
                                          but pay attention that  these two commits don't have a same number.                                       
+
+
+                     ==>Git Tag <== The version is like a number for example 2.0 or 1.0 and ... .
+1)git tag                            ==>Shows all the tag we have up to now.
+2)git tag version commit's namber    ==>Gives a tag to our commit's number.
+3)git tag -a version -m "messege"    ==>It uses just for our latest commit in a branch and also gives a 
+                                      messege to it.
+4)git tag -d version                 ==>To delete the tag.    
