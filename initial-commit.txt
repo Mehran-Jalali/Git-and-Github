@@ -1,4 +1,4 @@
-our first sighn in 
+our first sign in 
 برای شاخه جدید زدن به جای 
 (1) => git branch "name"   and   (2) => git checkout name
 میتوان با کد زیر هم branch جدید درست کرد هم واردش شد
@@ -26,4 +26,38 @@ git stash clear                deletes all the stashes
 2)git stash pop number (number which's  in the list)   This code can do a same thing like (git stash apply number)
                                                          ,but it will remove the stash number from stash list
 3)git stash drop number                                This code will only remove the stash number from stash list  
- 
+
+
+                     ==>Git Reflog <==
+git reflog                     Shows all the logs even those which deleted.                     
+
+
+
+                     ==> Git Merge <==At the begining, We have to go to a specific branch that
+                                      we want to combine it with another branch
+1)git merge another-branch-name             ==> another-branch-name refers to another branch that will be merged 
+                                                This code will bring commits in anotherbranch to our branch. 
+2)git merge --squash another-branch-neme    ==> This code will bring the changes frome anotherbranch 
+                                                to our branch but without the commits and therefor we 
+                                                should create a seprate commit which contains all changes.
+3)git merge --no-ff another-branch-name    ==> In this code we have all commits from another branch and also
+                                               have one new commit called merge commit.  
+4)git merge --abort                        ==>When we have conflex merge to undo the merge command
+5)git log --merge                          ==>Shows the commits that have contrast(or conflict) together.      
+6)git diff                                 ==>Shows more information about commits that are in contrast(or conflict).
+
+
+                     ==> Git Rebase <== You can watch lesson 54 for know how to use it but just pay attention that
+                                        git rebase make new commits.First you should switch to another branch 
+                                        for example X and:
+{in X }git rebase Y                               ==> Y is a name of the branch we wanna rebase it into our X branch 
+                                        And after that we switch to our Y branch and :
+{in Y }git merge X                 notice! BE CAREFULL IN USING GIT REBASE  
+
+
+                     ==> Cherry-Pick <== Allows us to exactly pick one specific commits in a branch and add
+                                         it to our branch.
+git cherry-pick commit's number          commit's number which we see in git log for example:
+                                         df128562a749af0920b8cba83fdbd9576f0bcb67 ; It leads to create a new
+                                         commit's number that is exactly have the same order in privious
+                                         but pay attention that  these two commits don't have a same number.                                       
