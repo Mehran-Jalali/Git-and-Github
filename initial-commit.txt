@@ -1,1 +1,25 @@
 ☻☻☻haha 
+<<<<<<< HEAD
+=======
+git ls-remote         ==>to show list of commits in remote repository.
+git fetch ((origin))  ==>fetch the new branches that we have made in origin.
+
+
+                         ==>Local tracking branch<===
+
+As you know we have: 1-Local branch             =>Branch on your pc
+
+                    *2-Local tracking branch*   =>Local refrence to remote tracking branch(to be edited)
+                     CODE available : git push |git pull
+                     3-Remote tracking branch   =>Local copy of remote branch(not to be edited) CODE: git fetch <origin>
+
+                     4-Remote branch('origin' repository)  =>Branch in remote location(e.g Git-hub)
+
+To connect "remote tracking branch" to "Local tracking branch":                     
+ ↓ ↓ ↓ ↓ ↓ ↓ ↓      
+First you might create a branch and therefor: 
+git branch --track <name> <remotes/origin/name of branch that be set up>  
+                             *notice! <<The name should be based on each other to push and pull easier>>
+
+git branch -vv   ==>Shows the branches that are based on each other and also the normel branches.
+>>>>>>> ec6087a (strategy of git)
