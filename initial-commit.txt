@@ -1,6 +1,4 @@
-☻☻☻haha 
-<<<<<<< HEAD
-=======
+☻☻☻
 git ls-remote         ==>to show list of commits in remote repository.
 git fetch ((origin))  ==>fetch the new branches that we have made in origin.
 
@@ -22,4 +20,4 @@ git branch --track <name> <remotes/origin/name of branch that be set up>
                              *notice! <<The name should be based on each other to push and pull easier>>
 
 git branch -vv   ==>Shows the branches that are based on each other and also the normel branches.
->>>>>>> ec6087a (strategy of git)
+git remote       ==>shows all the remote servers.
