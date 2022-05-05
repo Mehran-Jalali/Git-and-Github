@@ -69,3 +69,15 @@ git cherry-pick commit's number          commit's number which we see in git log
 3)git tag -a version -m "messege"    ==>It uses just for our latest commit in a branch and also gives a 
                                       messege to it.
 4)git tag -d version                 ==>To delete the tag.    
+
+                
+                
+                     ==>Git push<==(origin is an default name and can be changed)
+1)git remote add ((origin)) https://github.com/Mehran-Jalali/github-basics.git 
+2)git branch-M ((master))     ==>For rename our branch to smth for exapmle master
+3)git push ((origin)) ((master))   
+
+git branch -a      ==>Shows all the branches in local repository and also shows remote tracking branches.
+git branch -r      ==>Shows just branches in remote repository(tracking branches).
+  *notice! 
+        The connection between local branch and remote branch(cloud branch) is remote tracking branch.
