@@ -21,3 +21,4 @@ git branch --track <name> <remotes/origin/name of branch that be set up>
 
 git branch -vv   ==>Shows the branches that are based on each other and also the normel branches.
 git remote       ==>shows all the remote servers.
+git remote show <origin>   ==>more details about pushing and pulling.
