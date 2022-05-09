@@ -1,0 +1,112 @@
+our first sign in 
+برای شاخه جدید زدن به جای 
+(1) => git branch "name"   and   (2) => git checkout name
+میتوان با کد زیر هم branch جدید درست کرد هم واردش شد
+=> git checkout -b name
+یا
+=> git switch -c name
+برای حذف کردن branch یا چند تا از branchکافیست 
+=> git branch -D name name2
+
+
+                    ==> Git Stash <== Stash uses when ((UnStaged-changes)) happend
+git stash => برگشت به حالت پیش از کامیت(commit)
+git stash apply => برگشت به حالتی که بعد از کامیت(commit) تغیرات روی فایل کرده ایم
+                 ‍/با این کد به تنهایی به اخرین تغییر دست خواهیم یافت
+git stash list => لیست تغیراتی که ما تنها روی working directory   داده ایم یعنی بدون stage کردن  
+        ||         در این لیست 0 اخرین تغیر است
+        ||              
+        ↓↓
+git stash apply number         number which's  in the list 
+git stash clear                deletes all the stashes
+
+    More Details :
+1)git stash push -m "some text"                        This code can stash chenges with a message that you can
+                                                         ,see in (git stash list)
+2)git stash pop number (number which's  in the list)   This code can do a same thing like (git stash apply number)
+                                                         ,but it will remove the stash number from stash list
+3)git stash drop number                                This code will only remove the stash number from stash list  
+
+
+                     ==>Git Reflog <==
+git reflog                     Shows all the logs even those which deleted.                     
+
+
+
+                     ==> Git Merge <==At the begining, We have to go to a specific branch that
+                                      we want to combine it with another branch
+1)git merge another-branch-name             ==> another-branch-name refers to another branch that will be merged 
+                                                This code will bring commits in anotherbranch to our branch. 
+2)git merge --squash another-branch-neme    ==> This code will bring the changes frome anotherbranch 
+                                                to our branch but without the commits and therefor we 
+                                                should create a seprate commit which contains all changes.
+3)git merge --no-ff another-branch-name    ==> In this code we have all commits from another branch and also
+                                               have one new commit called merge commit.  
+4)git merge --abort                        ==>When we have conflex merge to undo the merge command
+5)git log --merge                          ==>Shows the commits that have contrast(or conflict) together.      
+6)git diff                                 ==>Shows more information about commits that are in contrast(or conflict).
+
+
+                     ==> Git Rebase <== You can watch lesson 54 for know how to use it but just pay attention that
+                                        git rebase make new commits.First you should switch to another branch 
+                                        for example X and:
+{in X }git rebase Y                               ==> Y is a name of the branch we wanna rebase it into our X branch 
+                                        And after that we switch to our Y branch and :
+{in Y }git merge X                 notice! BE CAREFULL IN USING GIT REBASE  
+
+
+                     ==> Cherry-Pick <== Allows us to exactly pick one specific commits in a branch and add
+                                         it to our branch.
+git cherry-pick commit's number          commit's number which we see in git log for example:
+                                         df128562a749af0920b8cba83fdbd9576f0bcb67 ; It leads to create a new
+                                         commit's number that is exactly have the same order in privious
+                                         but pay attention that  these two commits don't have a same number.                                       
+
+
+                     ==>Git Tag <== The version is like a number for example 2.0 or 1.0 and ... .
+1)git tag                            ==>Shows all the tag we have up to now.
+2)git tag version commit's namber    ==>Gives a tag to our commit's number.
+3)git tag -a version -m "messege"    ==>It uses just for our latest commit in a branch and also gives a 
+                                      messege to it.
+4)git tag -d version                 ==>To delete the tag.    
+
+                
+                
+                     ==>Git push<==(origin is an default name and can be changed)
+1)git remote add ((origin)) https://github.com/Mehran-Jalali/github-basics.git 
+2)git branch-M ((master))     ==>For rename our branch to smth for exapmle master
+3)git push ((origin)) ((master))   
+
+git branch -a      ==>Shows all the branches in local repository and also shows remote tracking branches.
+git branch -r      ==>Shows just branches in remote repository(tracking branches).
+  *notice! 
+        The connection between local branch and remote branch(cloud branch) is remote tracking branch.
+
+git ls-remote         ==>to show list of commits in remote repository.
+git fetch ((origin))  ==>fetch the new branches that we have made in origin.
+
+
+                         ==>Local tracking branch<===
+
+As you know we have: 1-Local branch             =>Branch on your pc
+
+                    *2-Local tracking branch*   =>Local refrence to remote tracking branch(to be edited)
+                     CODE available : git push |git pull
+                     3-Remote tracking branch   =>Local copy of remote branch(not to be edited) CODE: git fetch <origin>
+
+                     4-Remote branch('origin' repository)  =>Branch in remote location(e.g Git-hub)
+
+To connect "remote tracking branch" to "Local tracking branch":                     
+ ↓ ↓ ↓ ↓ ↓ ↓ ↓      
+First you might create a branch and therefor: 
+git branch --track <name> <remotes/origin/name of branch that be set up>  
+                             *notice! <<The name should be based on each other to push and pull easier>>
+
+git branch -vv   ==>Shows the branches that are based on each other and also the normel branches.
+git remote       ==>shows all the remote servers.
+git remote show <origin>   ==>more details about pushing and pulling.
+
+                               ==>Delete branches<==
+git branch -D <feature>                            ==>Delete local branch.
+git branch --delete --remotes <origin/feature>     ==>Delete remotes tracking branch.
+git push <origin> --delete <branch-name>           ==>Delete branches in remote repository like github.        
